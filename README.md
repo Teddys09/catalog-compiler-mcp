@@ -4,7 +4,11 @@ Give a local MCP-compatible AI agent the ability to generate and validate Google
 
 [Installation guide and example prompts](https://feeds.newbsscraping.com/guides/mcp-product-feeds/) · [Download the MCPB extension](https://github.com/Teddys09/catalog-compiler-mcp/releases/download/v1.0.0/catalog-compiler.mcpb) · [RapidAPI pricing](https://rapidapi.com/TeddyStrumilo/api/catalog-compiler/pricing)
 
-## Connect in a minute
+## Connect a hosted client
+
+RapidAPI also exposes the REST endpoints as hosted MCP tools. Open **MCP configuration** in the signed-in [RapidAPI playground](https://rapidapi.com/TeddyStrumilo/api/catalog-compiler/playground/%2Fv1%2Fcatalog%2Fcompile). For a streamable HTTP client that supports custom headers, use `https://mcp.rapidapi.com`, set `x-api-host` to `catalog-compiler.p.rapidapi.com` and provide your RapidAPI key in the secret `x-api-key` header. The hosted `v1catalogcompile` tool takes the example request and returns all requested feeds. The local tool table below applies to the desktop extension and stdio package.
+
+## Connect a local client
 
 Install the desktop extension in an MCPB-capable application, or add this entry in a stdio client. The command requires Node.js 22+ and Git.
 
