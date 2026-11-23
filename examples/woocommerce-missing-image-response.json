@@ -1,0 +1,126 @@
+{
+  "requestId": "woocommerce-missing-image",
+  "ruleSetVersion": "2026-11-18.1",
+  "billableUnits": 1,
+  "totalProducts": 1,
+  "results": [
+    {
+      "target": {
+        "channel": "google",
+        "country": "US",
+        "language": "en",
+        "format": "tsv",
+        "catalogEligibilityConfirmed": false
+      },
+      "ruleSetVersion": "2026-11-18.1",
+      "total": 1,
+      "valid": 0,
+      "invalid": 1,
+      "records": [
+        {
+          "index": 0,
+          "id": "LAMP-1",
+          "valid": false,
+          "original": {
+            "Type": "simple",
+            "SKU": "LAMP-1",
+            "Name": "Adjustable Desk Lamp",
+            "Description": "<p>LED desk lamp</p>",
+            "Permalink": "https://shop.example.com/lamp",
+            "Images": "",
+            "Brands": "Northwind",
+            "Regular price": "39.99",
+            "Sale price": "29.99",
+            "In stock?": "1",
+            "Currency": "USD"
+          },
+          "fields": {
+            "id": "LAMP-1",
+            "title": "Adjustable Desk Lamp",
+            "description": "LED desk lamp",
+            "link": "https://shop.example.com/lamp",
+            "availability": "in_stock",
+            "condition": "new",
+            "price": "39.99 USD",
+            "sale_price": "29.99 USD",
+            "brand": "Northwind"
+          },
+          "changes": [
+            {
+              "field": "condition",
+              "from": "",
+              "to": "new",
+              "reason": "Explicit source default condition"
+            },
+            {
+              "field": "availability",
+              "from": "in stock",
+              "to": "in_stock",
+              "reason": "Channel availability mapping"
+            },
+            {
+              "field": "price",
+              "from": "39.99",
+              "to": "39.99 USD",
+              "reason": "Channel money formatting"
+            },
+            {
+              "field": "sale_price",
+              "from": "29.99",
+              "to": "29.99 USD",
+              "reason": "Channel money formatting"
+            }
+          ],
+          "issues": [
+            {
+              "code": "REQUIRED_FIELD",
+              "severity": "error",
+              "channel": "google",
+              "productIndex": 0,
+              "productId": "LAMP-1",
+              "field": "image_link",
+              "message": "image_link is required for google",
+              "suggestion": "Supply image_link in the source catalog or field mapping",
+              "documentation": "https://support.google.com/merchants/answer/7052112?hl=en"
+            },
+            {
+              "code": "IDENTIFIER_RECOMMENDED",
+              "severity": "warning",
+              "channel": "google",
+              "productIndex": 0,
+              "productId": "LAMP-1",
+              "field": "gtin",
+              "message": "No GTIN or MPN was provided",
+              "suggestion": "Provide a real identifier when one exists; use identifier_exists=no only when appropriate",
+              "documentation": "https://support.google.com/merchants/answer/7052112?hl=en"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "code": "REQUIRED_FIELD",
+          "severity": "error",
+          "channel": "google",
+          "productIndex": 0,
+          "productId": "LAMP-1",
+          "field": "image_link",
+          "message": "image_link is required for google",
+          "suggestion": "Supply image_link in the source catalog or field mapping",
+          "documentation": "https://support.google.com/merchants/answer/7052112?hl=en"
+        },
+        {
+          "code": "IDENTIFIER_RECOMMENDED",
+          "severity": "warning",
+          "channel": "google",
+          "productIndex": 0,
+          "productId": "LAMP-1",
+          "field": "gtin",
+          "message": "No GTIN or MPN was provided",
+          "suggestion": "Provide a real identifier when one exists; use identifier_exists=no only when appropriate",
+          "documentation": "https://support.google.com/merchants/answer/7052112?hl=en"
+        }
+      ]
+    }
+  ]
+}

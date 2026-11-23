@@ -1,0 +1,12 @@
+{
+  "name": "catalog-compiler-mcp",
+  "version": "1.0.0",
+  "description": "Generate and validate shopping feeds from MCP-compatible AI agents using Catalog Compiler on RapidAPI.",
+  "type": "module",
+  "bin": { "catalog-compiler-mcp": "./server.mjs" },
+  "engines": { "node": ">=22" },
+  "repository": { "type": "git", "url": "https://github.com/Teddys09/catalog-compiler-mcp.git" },
+  "homepage": "https://feeds.newbsscraping.com/guides/mcp-product-feeds/",
+  "files": ["server.mjs", "sample.json"],
+  "dependencies": { "@modelcontextprotocol/sdk": "1.32.2", "zod": "3.25.76" }
+}

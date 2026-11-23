@@ -1,0 +1,19 @@
+{
+  "source": {
+    "format": "csv",
+    "template": "woocommerce",
+    "text": "Type,SKU,Name,Description,Permalink,Images,Brands,Regular price,Sale price,In stock?,Currency\nsimple,LAMP-1,Adjustable Desk Lamp,<p>LED desk lamp</p>,https://shop.example.com/lamp,,Northwind,39.99,29.99,1,USD\n",
+    "storeUrl": "https://shop.example.com",
+    "defaultCurrency": "USD",
+    "defaultCondition": "new"
+  },
+  "targets": [
+    {
+      "channel": "google",
+      "country": "US",
+      "language": "en",
+      "format": "tsv"
+    }
+  ],
+  "correctionPolicy": "safe"
+}

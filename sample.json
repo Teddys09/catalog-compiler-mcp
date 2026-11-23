@@ -1,0 +1,48 @@
+{
+  "source": {
+    "format": "json",
+    "template": "canonical",
+    "defaultCurrency": "USD",
+    "products": [
+      {
+        "id": "SHIRT-BLUE-M",
+        "title": "Blue Cotton Shirt",
+        "description": "Soft blue cotton shirt",
+        "link": "https://shop.example.com/products/blue-shirt",
+        "image_link": "https://shop.example.com/images/blue-shirt.jpg",
+        "availability": "in_stock",
+        "condition": "new",
+        "price": "19.99",
+        "brand": "Northwind",
+        "google_product_category": "212",
+        "item_group_id": "SHIRT-1",
+        "color": "blue",
+        "size": "M",
+        "gender": "unisex",
+        "age_group": "adult"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "channel": "google",
+      "country": "US",
+      "language": "en",
+      "format": "tsv"
+    },
+    {
+      "channel": "meta",
+      "country": "US",
+      "language": "en",
+      "format": "csv"
+    },
+    {
+      "channel": "tiktok",
+      "country": "US",
+      "language": "en",
+      "format": "csv",
+      "catalogEligibilityConfirmed": true
+    }
+  ],
+  "correctionPolicy": "safe"
+}

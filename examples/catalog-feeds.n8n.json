@@ -1,0 +1,204 @@
+{
+  "name": "Validate a Shopify or WooCommerce CSV and generate shopping feeds",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "d81de115-5987-4439-8aef-cb2ad55e6e90",
+      "name": "Run once",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "name": "csv",
+              "value": "URL handle,Title,Description,Vendor,Product category,Type,SKU,Variant Barcodes,Option1 name,Option1 value,Option2 name,Option2 value,Price,Inventory quantity,Product image URL,Variant image URL,Google Shopping / Google product category,Google Shopping / Gender,Google Shopping / Age group,Google Shopping / Condition\r\ncotton-shirt,Cotton Shirt,Soft cotton shirt,Northwind,aa-1-2-3,T-shirt,SHIRT-BLUE-M,ean:4006381333931,Color,Blue,Size,M,19.99,5,https://shop.example.com/images/shirt-front.jpg,,212,Unisex,Adult (13+ years old),New\r\ncotton-shirt,,,,,,SHIRT-RED-M,upc:036000291452,Color,Red,Size,M,19.99,3,,https://shop.example.com/images/shirt-red.jpg,,,,\r\ncotton-shirt,,,,,,,,,,,,,,https://shop.example.com/images/shirt-side.jpg,,,,,",
+              "type": "string",
+              "id": "f9fb6e09-0ffd-4da9-9659-baf07c6cbd67"
+            },
+            {
+              "name": "template",
+              "value": "shopify",
+              "type": "string",
+              "id": "6bed392a-765e-4b27-8c05-e6ef4995bf31"
+            },
+            {
+              "name": "storeUrl",
+              "value": "https://shop.example.com",
+              "type": "string",
+              "id": "93634a07-1fbb-4c55-9086-53538c53c865"
+            },
+            {
+              "name": "defaultCurrency",
+              "value": "USD",
+              "type": "string",
+              "id": "b50fc921-8208-4bba-8f8a-259d76b3345c"
+            },
+            {
+              "name": "defaultCondition",
+              "value": "new",
+              "type": "string",
+              "id": "c5576662-7853-42d7-8965-8a98a7dbd39e"
+            },
+            {
+              "name": "includeEligibleTikTok",
+              "value": false,
+              "type": "boolean",
+              "id": "ee8f3448-771b-4be4-89ef-d59770d48ca8"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f632a248-6d1b-4b5f-9a98-bbb373219abd",
+      "name": "Catalog settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        230,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://catalog-compiler.p.rapidapi.com/v1/catalog/compile",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-RapidAPI-Host",
+              "value": "catalog-compiler.p.rapidapi.com"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  source: { format: 'csv', template: $json.template, text: $json.csv, storeUrl: $json.storeUrl, defaultCurrency: $json.defaultCurrency, defaultCondition: $json.defaultCondition },\n  targets: [\n    { channel: 'google', country: 'US', language: 'en', format: 'tsv' },\n    { channel: 'meta', country: 'US', language: 'en', format: 'csv' },\n    ...($json.includeEligibleTikTok ? [{ channel: 'tiktok', country: 'US', language: 'en', format: 'csv', catalogEligibilityConfirmed: true }] : [])\n  ],\n  correctionPolicy: 'safe'\n} }}",
+        "options": {
+          "timeout": 30000,
+          "redirect": {
+            "redirect": {
+              "followRedirects": false
+            }
+          }
+        }
+      },
+      "id": "8a58268d-cf43-4dde-97f6-5b85065a5c92",
+      "name": "Compile catalog",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const { results, requestId } = $input.first().json;\nif (!Array.isArray(results) || !results.length) throw new Error('Missing channel results. Open Compile catalog for the response.');\nconst failed = results.filter(result => result.invalid > 0 || !result.feed || result.issues.some(issue => issue.severity === 'error'));\nif (failed.length) {\n  const issues = failed.flatMap(result => result.issues.filter(issue => issue.severity === 'error')\n    .map(issue => [result.target.channel, issue.productId || 'catalog', issue.field || issue.code].join(' / ')));\n  throw new Error('Review the Compile catalog response (' + requestId + '). ' + (issues.slice(0, 8).join(', ') || 'No feed returned.'));\n}\nreturn results.map(result => ({\n  json: { fileName: result.target.channel + '.' + result.target.format, feed: result.feed }\n}));"
+      },
+      "id": "5f5c59f0-3747-46d1-b39a-86a73acfb355",
+      "name": "Check results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        690,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toText",
+        "sourceProperty": "feed",
+        "options": {
+          "fileName": "={{ $json.fileName }}",
+          "encoding": "utf8"
+        }
+      },
+      "id": "4ded9cfa-de8c-48dd-bdad-2310a52763e3",
+      "name": "Download feed files",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        920,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Convert a store export to shopping feeds\n1. In **Compile catalog**, select a Header Auth credential named **X-RapidAPI-Key** with your own RapidAPI key as its value.\n2. Run the included fictional Shopify sample. One manual run makes one $0.01 API request. Open **Download feed files → Binary**.\n3. In **Catalog settings**, replace the CSV, store URL, currency and condition. Set the template to shopify or woocommerce. Enable TikTok only for an eligible catalog.\n\n[Setup, limits and worked example](https://feeds.newbsscraping.com/guides/n8n-product-feeds/)",
+        "width": 940,
+        "height": 245
+      },
+      "id": "2c2a4359-a689-402e-8bc1-f4d50f27f958",
+      "name": "Setup",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        50,
+        -285
+      ]
+    }
+  ],
+  "connections": {
+    "Run once": {
+      "main": [
+        [
+          {
+            "node": "Catalog settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Catalog settings": {
+      "main": [
+        [
+          {
+            "node": "Compile catalog",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compile catalog": {
+      "main": [
+        [
+          {
+            "node": "Check results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check results": {
+      "main": [
+        [
+          {
+            "node": "Download feed files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}

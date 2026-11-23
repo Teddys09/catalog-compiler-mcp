@@ -1,0 +1,530 @@
+{
+  "requestId": "shopify",
+  "ruleSetVersion": "2026-11-18.1",
+  "billableUnits": 6,
+  "totalProducts": 2,
+  "results": [
+    {
+      "target": {
+        "channel": "google",
+        "country": "US",
+        "language": "en",
+        "format": "tsv",
+        "catalogEligibilityConfirmed": false
+      },
+      "ruleSetVersion": "2026-11-18.1",
+      "total": 2,
+      "valid": 2,
+      "invalid": 0,
+      "records": [
+        {
+          "index": 0,
+          "id": "SHIRT-BLUE-M",
+          "valid": true,
+          "original": {
+            "Title": "Cotton Shirt",
+            "Description": "Soft cotton shirt",
+            "Vendor": "Northwind",
+            "Type": "T-shirt",
+            "Product category": "aa-1-2-3",
+            "Google Shopping / Google product category": "212",
+            "Google Shopping / Gender": "Unisex",
+            "Google Shopping / Age group": "Adult (13+ years old)",
+            "Google Shopping / Condition": "New",
+            "Option1 name": "Color",
+            "Option2 name": "Size",
+            "Product image URL": "https://shop.example.com/images/shirt-front.jpg",
+            "URL handle": "cotton-shirt",
+            "SKU": "SHIRT-BLUE-M",
+            "Variant Barcodes": "ean:4006381333931",
+            "Option1 value": "Blue",
+            "Option2 value": "M",
+            "Price": "19.99",
+            "Inventory quantity": "5",
+            "Additional Image Links": "https://shop.example.com/images/shirt-side.jpg"
+          },
+          "fields": {
+            "id": "SHIRT-BLUE-M",
+            "title": "Cotton Shirt",
+            "description": "Soft cotton shirt",
+            "link": "https://shop.example.com/products/cotton-shirt",
+            "image_link": "https://shop.example.com/images/shirt-front.jpg",
+            "additional_image_link": "https://shop.example.com/images/shirt-side.jpg",
+            "availability": "in_stock",
+            "condition": "new",
+            "price": "19.99 USD",
+            "brand": "Northwind",
+            "gtin": "4006381333931",
+            "google_product_category": "212",
+            "product_type": "T-shirt",
+            "item_group_id": "cotton-shirt",
+            "color": "Blue",
+            "size": "M",
+            "gender": "unisex",
+            "age_group": "adult"
+          },
+          "changes": [
+            {
+              "field": "currency",
+              "from": "",
+              "to": "USD",
+              "reason": "Explicit source default currency"
+            },
+            {
+              "field": "availability",
+              "from": "in stock",
+              "to": "in_stock",
+              "reason": "Channel availability mapping"
+            },
+            {
+              "field": "condition",
+              "from": "New",
+              "to": "new",
+              "reason": "Channel condition mapping"
+            },
+            {
+              "field": "gender",
+              "from": "Unisex",
+              "to": "unisex",
+              "reason": "Channel enum normalization"
+            },
+            {
+              "field": "price",
+              "from": "19.99",
+              "to": "19.99 USD",
+              "reason": "Channel money formatting"
+            }
+          ],
+          "issues": []
+        },
+        {
+          "index": 1,
+          "id": "SHIRT-RED-M",
+          "valid": true,
+          "original": {
+            "Title": "Cotton Shirt",
+            "Description": "Soft cotton shirt",
+            "Vendor": "Northwind",
+            "Type": "T-shirt",
+            "Product category": "aa-1-2-3",
+            "Google Shopping / Google product category": "212",
+            "Google Shopping / Gender": "Unisex",
+            "Google Shopping / Age group": "Adult (13+ years old)",
+            "Google Shopping / Condition": "New",
+            "Option1 name": "Color",
+            "Option2 name": "Size",
+            "Product image URL": "https://shop.example.com/images/shirt-front.jpg",
+            "URL handle": "cotton-shirt",
+            "SKU": "SHIRT-RED-M",
+            "Variant Barcodes": "upc:036000291452",
+            "Option1 value": "Red",
+            "Option2 value": "M",
+            "Price": "19.99",
+            "Inventory quantity": "3",
+            "Variant image URL": "https://shop.example.com/images/shirt-red.jpg",
+            "Additional Image Links": "https://shop.example.com/images/shirt-front.jpg,https://shop.example.com/images/shirt-side.jpg"
+          },
+          "fields": {
+            "id": "SHIRT-RED-M",
+            "title": "Cotton Shirt",
+            "description": "Soft cotton shirt",
+            "link": "https://shop.example.com/products/cotton-shirt",
+            "image_link": "https://shop.example.com/images/shirt-red.jpg",
+            "additional_image_link": "https://shop.example.com/images/shirt-front.jpg,https://shop.example.com/images/shirt-side.jpg",
+            "availability": "in_stock",
+            "condition": "new",
+            "price": "19.99 USD",
+            "brand": "Northwind",
+            "gtin": "036000291452",
+            "google_product_category": "212",
+            "product_type": "T-shirt",
+            "item_group_id": "cotton-shirt",
+            "color": "Red",
+            "size": "M",
+            "gender": "unisex",
+            "age_group": "adult"
+          },
+          "changes": [
+            {
+              "field": "currency",
+              "from": "",
+              "to": "USD",
+              "reason": "Explicit source default currency"
+            },
+            {
+              "field": "availability",
+              "from": "in stock",
+              "to": "in_stock",
+              "reason": "Channel availability mapping"
+            },
+            {
+              "field": "condition",
+              "from": "New",
+              "to": "new",
+              "reason": "Channel condition mapping"
+            },
+            {
+              "field": "gender",
+              "from": "Unisex",
+              "to": "unisex",
+              "reason": "Channel enum normalization"
+            },
+            {
+              "field": "price",
+              "from": "19.99",
+              "to": "19.99 USD",
+              "reason": "Channel money formatting"
+            }
+          ],
+          "issues": []
+        }
+      ],
+      "issues": [],
+      "feed": "id\ttitle\tdescription\tlink\timage_link\tadditional_image_link\tavailability\tavailability_date\tcondition\tprice\tsale_price\tsale_price_effective_date\tbrand\tgtin\tmpn\tidentifier_exists\tgoogle_product_category\tproduct_type\titem_group_id\tcolor\tsize\tgender\tage_group\tmaterial\tpattern\tshipping\tshipping_weight\tcustom_label_0\tcustom_label_1\tcustom_label_2\tcustom_label_3\tcustom_label_4\r\nSHIRT-BLUE-M\tCotton Shirt\tSoft cotton shirt\thttps://shop.example.com/products/cotton-shirt\thttps://shop.example.com/images/shirt-front.jpg\thttps://shop.example.com/images/shirt-side.jpg\tin_stock\t\tnew\t19.99 USD\t\t\tNorthwind\t4006381333931\t\t\t212\tT-shirt\tcotton-shirt\tBlue\tM\tunisex\tadult\t\t\t\t\t\t\t\t\t\r\nSHIRT-RED-M\tCotton Shirt\tSoft cotton shirt\thttps://shop.example.com/products/cotton-shirt\thttps://shop.example.com/images/shirt-red.jpg\thttps://shop.example.com/images/shirt-front.jpg,https://shop.example.com/images/shirt-side.jpg\tin_stock\t\tnew\t19.99 USD\t\t\tNorthwind\t036000291452\t\t\t212\tT-shirt\tcotton-shirt\tRed\tM\tunisex\tadult\t\t\t\t\t\t\t\t\t\r\n"
+    },
+    {
+      "target": {
+        "channel": "meta",
+        "country": "US",
+        "language": "en",
+        "format": "csv",
+        "catalogEligibilityConfirmed": false
+      },
+      "ruleSetVersion": "2026-11-18.1",
+      "total": 2,
+      "valid": 2,
+      "invalid": 0,
+      "records": [
+        {
+          "index": 0,
+          "id": "SHIRT-BLUE-M",
+          "valid": true,
+          "original": {
+            "Title": "Cotton Shirt",
+            "Description": "Soft cotton shirt",
+            "Vendor": "Northwind",
+            "Type": "T-shirt",
+            "Product category": "aa-1-2-3",
+            "Google Shopping / Google product category": "212",
+            "Google Shopping / Gender": "Unisex",
+            "Google Shopping / Age group": "Adult (13+ years old)",
+            "Google Shopping / Condition": "New",
+            "Option1 name": "Color",
+            "Option2 name": "Size",
+            "Product image URL": "https://shop.example.com/images/shirt-front.jpg",
+            "URL handle": "cotton-shirt",
+            "SKU": "SHIRT-BLUE-M",
+            "Variant Barcodes": "ean:4006381333931",
+            "Option1 value": "Blue",
+            "Option2 value": "M",
+            "Price": "19.99",
+            "Inventory quantity": "5",
+            "Additional Image Links": "https://shop.example.com/images/shirt-side.jpg"
+          },
+          "fields": {
+            "id": "SHIRT-BLUE-M",
+            "title": "Cotton Shirt",
+            "description": "Soft cotton shirt",
+            "link": "https://shop.example.com/products/cotton-shirt",
+            "image_link": "https://shop.example.com/images/shirt-front.jpg",
+            "additional_image_link": "https://shop.example.com/images/shirt-side.jpg",
+            "availability": "in stock",
+            "condition": "new",
+            "price": "19.99 USD",
+            "brand": "Northwind",
+            "gtin": "4006381333931",
+            "google_product_category": "212",
+            "product_type": "T-shirt",
+            "item_group_id": "cotton-shirt",
+            "color": "Blue",
+            "size": "M",
+            "gender": "unisex",
+            "age_group": "adult"
+          },
+          "changes": [
+            {
+              "field": "currency",
+              "from": "",
+              "to": "USD",
+              "reason": "Explicit source default currency"
+            },
+            {
+              "field": "condition",
+              "from": "New",
+              "to": "new",
+              "reason": "Channel condition mapping"
+            },
+            {
+              "field": "gender",
+              "from": "Unisex",
+              "to": "unisex",
+              "reason": "Channel enum normalization"
+            },
+            {
+              "field": "price",
+              "from": "19.99",
+              "to": "19.99 USD",
+              "reason": "Channel money formatting"
+            }
+          ],
+          "issues": []
+        },
+        {
+          "index": 1,
+          "id": "SHIRT-RED-M",
+          "valid": true,
+          "original": {
+            "Title": "Cotton Shirt",
+            "Description": "Soft cotton shirt",
+            "Vendor": "Northwind",
+            "Type": "T-shirt",
+            "Product category": "aa-1-2-3",
+            "Google Shopping / Google product category": "212",
+            "Google Shopping / Gender": "Unisex",
+            "Google Shopping / Age group": "Adult (13+ years old)",
+            "Google Shopping / Condition": "New",
+            "Option1 name": "Color",
+            "Option2 name": "Size",
+            "Product image URL": "https://shop.example.com/images/shirt-front.jpg",
+            "URL handle": "cotton-shirt",
+            "SKU": "SHIRT-RED-M",
+            "Variant Barcodes": "upc:036000291452",
+            "Option1 value": "Red",
+            "Option2 value": "M",
+            "Price": "19.99",
+            "Inventory quantity": "3",
+            "Variant image URL": "https://shop.example.com/images/shirt-red.jpg",
+            "Additional Image Links": "https://shop.example.com/images/shirt-front.jpg,https://shop.example.com/images/shirt-side.jpg"
+          },
+          "fields": {
+            "id": "SHIRT-RED-M",
+            "title": "Cotton Shirt",
+            "description": "Soft cotton shirt",
+            "link": "https://shop.example.com/products/cotton-shirt",
+            "image_link": "https://shop.example.com/images/shirt-red.jpg",
+            "additional_image_link": "https://shop.example.com/images/shirt-front.jpg,https://shop.example.com/images/shirt-side.jpg",
+            "availability": "in stock",
+            "condition": "new",
+            "price": "19.99 USD",
+            "brand": "Northwind",
+            "gtin": "036000291452",
+            "google_product_category": "212",
+            "product_type": "T-shirt",
+            "item_group_id": "cotton-shirt",
+            "color": "Red",
+            "size": "M",
+            "gender": "unisex",
+            "age_group": "adult"
+          },
+          "changes": [
+            {
+              "field": "currency",
+              "from": "",
+              "to": "USD",
+              "reason": "Explicit source default currency"
+            },
+            {
+              "field": "condition",
+              "from": "New",
+              "to": "new",
+              "reason": "Channel condition mapping"
+            },
+            {
+              "field": "gender",
+              "from": "Unisex",
+              "to": "unisex",
+              "reason": "Channel enum normalization"
+            },
+            {
+              "field": "price",
+              "from": "19.99",
+              "to": "19.99 USD",
+              "reason": "Channel money formatting"
+            }
+          ],
+          "issues": []
+        }
+      ],
+      "issues": [],
+      "feed": "id,title,description,link,image_link,additional_image_link,availability,condition,price,sale_price,sale_price_effective_date,brand,gtin,mpn,google_product_category,product_type,item_group_id,color,size,gender,age_group,material,pattern,shipping,shipping_weight,custom_label_0,custom_label_1,custom_label_2,custom_label_3,custom_label_4\r\nSHIRT-BLUE-M,Cotton Shirt,Soft cotton shirt,https://shop.example.com/products/cotton-shirt,https://shop.example.com/images/shirt-front.jpg,https://shop.example.com/images/shirt-side.jpg,in stock,new,19.99 USD,,,Northwind,4006381333931,,212,T-shirt,cotton-shirt,Blue,M,unisex,adult,,,,,,,,,\r\nSHIRT-RED-M,Cotton Shirt,Soft cotton shirt,https://shop.example.com/products/cotton-shirt,https://shop.example.com/images/shirt-red.jpg,\"https://shop.example.com/images/shirt-front.jpg,https://shop.example.com/images/shirt-side.jpg\",in stock,new,19.99 USD,,,Northwind,036000291452,,212,T-shirt,cotton-shirt,Red,M,unisex,adult,,,,,,,,,\r\n"
+    },
+    {
+      "target": {
+        "channel": "tiktok",
+        "country": "US",
+        "language": "en",
+        "format": "csv",
+        "catalogEligibilityConfirmed": true
+      },
+      "ruleSetVersion": "2026-11-18.1",
+      "total": 2,
+      "valid": 2,
+      "invalid": 0,
+      "records": [
+        {
+          "index": 0,
+          "id": "SHIRT-BLUE-M",
+          "valid": true,
+          "original": {
+            "Title": "Cotton Shirt",
+            "Description": "Soft cotton shirt",
+            "Vendor": "Northwind",
+            "Type": "T-shirt",
+            "Product category": "aa-1-2-3",
+            "Google Shopping / Google product category": "212",
+            "Google Shopping / Gender": "Unisex",
+            "Google Shopping / Age group": "Adult (13+ years old)",
+            "Google Shopping / Condition": "New",
+            "Option1 name": "Color",
+            "Option2 name": "Size",
+            "Product image URL": "https://shop.example.com/images/shirt-front.jpg",
+            "URL handle": "cotton-shirt",
+            "SKU": "SHIRT-BLUE-M",
+            "Variant Barcodes": "ean:4006381333931",
+            "Option1 value": "Blue",
+            "Option2 value": "M",
+            "Price": "19.99",
+            "Inventory quantity": "5",
+            "Additional Image Links": "https://shop.example.com/images/shirt-side.jpg"
+          },
+          "fields": {
+            "sku_id": "SHIRT-BLUE-M",
+            "title": "Cotton Shirt",
+            "description": "Soft cotton shirt",
+            "availability": "in stock",
+            "condition": "new",
+            "price": "19.99 USD",
+            "link": "https://shop.example.com/products/cotton-shirt",
+            "image_link": "https://shop.example.com/images/shirt-front.jpg",
+            "brand": "Northwind",
+            "additional_image_link": "https://shop.example.com/images/shirt-side.jpg",
+            "google_product_category": "Apparel & Accessories > Clothing > Shirts & Tops",
+            "product_type": "T-shirt",
+            "item_group_id": "cotton-shirt",
+            "color": "Blue",
+            "size": "M",
+            "gender": "unisex",
+            "age_group": "adult",
+            "gtin": "4006381333931"
+          },
+          "changes": [
+            {
+              "field": "currency",
+              "from": "",
+              "to": "USD",
+              "reason": "Explicit source default currency"
+            },
+            {
+              "field": "condition",
+              "from": "New",
+              "to": "new",
+              "reason": "Channel condition mapping"
+            },
+            {
+              "field": "gender",
+              "from": "Unisex",
+              "to": "unisex",
+              "reason": "Channel enum normalization"
+            },
+            {
+              "field": "price",
+              "from": "19.99",
+              "to": "19.99 USD",
+              "reason": "Channel money formatting"
+            },
+            {
+              "field": "google_product_category",
+              "from": "212",
+              "to": "Apparel & Accessories > Clothing > Shirts & Tops",
+              "reason": "TikTok supports three taxonomy levels"
+            }
+          ],
+          "issues": []
+        },
+        {
+          "index": 1,
+          "id": "SHIRT-RED-M",
+          "valid": true,
+          "original": {
+            "Title": "Cotton Shirt",
+            "Description": "Soft cotton shirt",
+            "Vendor": "Northwind",
+            "Type": "T-shirt",
+            "Product category": "aa-1-2-3",
+            "Google Shopping / Google product category": "212",
+            "Google Shopping / Gender": "Unisex",
+            "Google Shopping / Age group": "Adult (13+ years old)",
+            "Google Shopping / Condition": "New",
+            "Option1 name": "Color",
+            "Option2 name": "Size",
+            "Product image URL": "https://shop.example.com/images/shirt-front.jpg",
+            "URL handle": "cotton-shirt",
+            "SKU": "SHIRT-RED-M",
+            "Variant Barcodes": "upc:036000291452",
+            "Option1 value": "Red",
+            "Option2 value": "M",
+            "Price": "19.99",
+            "Inventory quantity": "3",
+            "Variant image URL": "https://shop.example.com/images/shirt-red.jpg",
+            "Additional Image Links": "https://shop.example.com/images/shirt-front.jpg,https://shop.example.com/images/shirt-side.jpg"
+          },
+          "fields": {
+            "sku_id": "SHIRT-RED-M",
+            "title": "Cotton Shirt",
+            "description": "Soft cotton shirt",
+            "availability": "in stock",
+            "condition": "new",
+            "price": "19.99 USD",
+            "link": "https://shop.example.com/products/cotton-shirt",
+            "image_link": "https://shop.example.com/images/shirt-red.jpg",
+            "brand": "Northwind",
+            "additional_image_link": "https://shop.example.com/images/shirt-front.jpg,https://shop.example.com/images/shirt-side.jpg",
+            "google_product_category": "Apparel & Accessories > Clothing > Shirts & Tops",
+            "product_type": "T-shirt",
+            "item_group_id": "cotton-shirt",
+            "color": "Red",
+            "size": "M",
+            "gender": "unisex",
+            "age_group": "adult",
+            "gtin": "036000291452"
+          },
+          "changes": [
+            {
+              "field": "currency",
+              "from": "",
+              "to": "USD",
+              "reason": "Explicit source default currency"
+            },
+            {
+              "field": "condition",
+              "from": "New",
+              "to": "new",
+              "reason": "Channel condition mapping"
+            },
+            {
+              "field": "gender",
+              "from": "Unisex",
+              "to": "unisex",
+              "reason": "Channel enum normalization"
+            },
+            {
+              "field": "price",
+              "from": "19.99",
+              "to": "19.99 USD",
+              "reason": "Channel money formatting"
+            },
+            {
+              "field": "google_product_category",
+              "from": "212",
+              "to": "Apparel & Accessories > Clothing > Shirts & Tops",
+              "reason": "TikTok supports three taxonomy levels"
+            }
+          ],
+          "issues": []
+        }
+      ],
+      "issues": [],
+      "feed": "sku_id,title,description,availability,condition,price,link,image_link,brand,additional_image_link,google_product_category,product_type,item_group_id,color,size,gender,age_group,material,pattern,sale_price,sale_price_effective_date,shipping,shipping_weight,gtin,mpn,custom_label_0,custom_label_1,custom_label_2,custom_label_3,custom_label_4\r\nSHIRT-BLUE-M,Cotton Shirt,Soft cotton shirt,in stock,new,19.99 USD,https://shop.example.com/products/cotton-shirt,https://shop.example.com/images/shirt-front.jpg,Northwind,https://shop.example.com/images/shirt-side.jpg,Apparel & Accessories > Clothing > Shirts & Tops,T-shirt,cotton-shirt,Blue,M,unisex,adult,,,,,,,4006381333931,,,,,,\r\nSHIRT-RED-M,Cotton Shirt,Soft cotton shirt,in stock,new,19.99 USD,https://shop.example.com/products/cotton-shirt,https://shop.example.com/images/shirt-red.jpg,Northwind,\"https://shop.example.com/images/shirt-front.jpg,https://shop.example.com/images/shirt-side.jpg\",Apparel & Accessories > Clothing > Shirts & Tops,T-shirt,cotton-shirt,Red,M,unisex,adult,,,,,,,036000291452,,,,,,\r\n"
+    }
+  ]
+}

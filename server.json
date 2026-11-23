@@ -1,0 +1,31 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.teddys09/catalog-compiler",
+  "title": "Catalog Compiler",
+  "description": "Validate Shopify and WooCommerce product data and generate Google, Meta and TikTok shopping feeds.",
+  "repository": {
+    "url": "https://github.com/Teddys09/catalog-compiler-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://feeds.newbsscraping.com/guides/mcp-product-feeds/",
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/Teddys09/catalog-compiler-mcp/releases/download/v1.0.0/catalog-compiler.mcpb",
+      "fileSha256": "cb3fb0c0880555389766b85cc2bc9b2acac86fc078ebcc3c1a56399b870eb2bd",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "RAPIDAPI_KEY",
+          "description": "Your RapidAPI application key for paid tools. The offline sample works without one.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}

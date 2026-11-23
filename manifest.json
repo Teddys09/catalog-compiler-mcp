@@ -1,0 +1,15 @@
+{
+  "manifest_version": "0.3",
+  "name": "catalog-compiler",
+  "display_name": "Catalog Compiler",
+  "version": "1.0.0",
+  "description": "Validate product catalogs and generate shopping feeds for Google, Meta and TikTok.",
+  "author": { "name": "TeddyStrumilo", "url": "https://rapidapi.com/TeddyStrumilo/api/catalog-compiler" },
+  "homepage": "https://feeds.newbsscraping.com/guides/mcp-product-feeds/",
+  "repository": { "type": "git", "url": "https://github.com/Teddys09/catalog-compiler-mcp" },
+  "server": { "type": "node", "entry_point": "server.mjs", "mcp_config": {
+    "command": "node", "args": ["${__dirname}/server.mjs"], "env": { "RAPIDAPI_KEY": "${user_config.rapidapi_key}" }
+  }},
+  "user_config": { "rapidapi_key": { "type": "string", "title": "RapidAPI key", "description": "Your own key for paid tools ($0.01 per call). The offline example is free.", "sensitive": true, "required": false } },
+  "compatibility": { "runtimes": { "node": ">=22.0.0" } }
+}

@@ -1,0 +1,32 @@
+{
+  "source": {
+    "format": "csv",
+    "template": "shopify",
+    "text": "URL handle,Title,Description,Vendor,Product category,Type,SKU,Variant Barcodes,Option1 name,Option1 value,Option2 name,Option2 value,Price,Inventory quantity,Product image URL,Variant image URL,Google Shopping / Google product category,Google Shopping / Gender,Google Shopping / Age group,Google Shopping / Condition\r\ncotton-shirt,Cotton Shirt,Soft cotton shirt,Northwind,aa-1-2-3,T-shirt,SHIRT-BLUE-M,ean:4006381333931,Color,Blue,Size,M,19.99,5,https://shop.example.com/images/shirt-front.jpg,,212,Unisex,Adult (13+ years old),New\r\ncotton-shirt,,,,,,SHIRT-RED-M,upc:036000291452,Color,Red,Size,M,19.99,3,,https://shop.example.com/images/shirt-red.jpg,,,,\r\ncotton-shirt,,,,,,,,,,,,,,https://shop.example.com/images/shirt-side.jpg,,,,,\r\n",
+    "storeUrl": "https://shop.example.com",
+    "defaultCurrency": "USD",
+    "defaultCondition": "new"
+  },
+  "targets": [
+    {
+      "channel": "google",
+      "country": "US",
+      "language": "en",
+      "format": "tsv"
+    },
+    {
+      "channel": "meta",
+      "country": "US",
+      "language": "en",
+      "format": "csv"
+    },
+    {
+      "channel": "tiktok",
+      "country": "US",
+      "language": "en",
+      "format": "csv",
+      "catalogEligibilityConfirmed": true
+    }
+  ],
+  "correctionPolicy": "safe"
+}

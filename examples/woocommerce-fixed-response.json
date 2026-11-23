@@ -1,0 +1,106 @@
+{
+  "requestId": "woocommerce-fixed",
+  "ruleSetVersion": "2026-11-18.1",
+  "billableUnits": 1,
+  "totalProducts": 1,
+  "results": [
+    {
+      "target": {
+        "channel": "google",
+        "country": "US",
+        "language": "en",
+        "format": "tsv",
+        "catalogEligibilityConfirmed": false
+      },
+      "ruleSetVersion": "2026-11-18.1",
+      "total": 1,
+      "valid": 1,
+      "invalid": 0,
+      "records": [
+        {
+          "index": 0,
+          "id": "LAMP-1",
+          "valid": true,
+          "original": {
+            "Type": "simple",
+            "SKU": "LAMP-1",
+            "Name": "Adjustable Desk Lamp",
+            "Description": "<p>LED desk lamp</p>",
+            "Permalink": "https://shop.example.com/lamp",
+            "Images": "https://shop.example.com/images/lamp.jpg",
+            "Brands": "Northwind",
+            "Regular price": "39.99",
+            "Sale price": "29.99",
+            "In stock?": "1",
+            "Currency": "USD"
+          },
+          "fields": {
+            "id": "LAMP-1",
+            "title": "Adjustable Desk Lamp",
+            "description": "LED desk lamp",
+            "link": "https://shop.example.com/lamp",
+            "image_link": "https://shop.example.com/images/lamp.jpg",
+            "availability": "in_stock",
+            "condition": "new",
+            "price": "39.99 USD",
+            "sale_price": "29.99 USD",
+            "brand": "Northwind"
+          },
+          "changes": [
+            {
+              "field": "condition",
+              "from": "",
+              "to": "new",
+              "reason": "Explicit source default condition"
+            },
+            {
+              "field": "availability",
+              "from": "in stock",
+              "to": "in_stock",
+              "reason": "Channel availability mapping"
+            },
+            {
+              "field": "price",
+              "from": "39.99",
+              "to": "39.99 USD",
+              "reason": "Channel money formatting"
+            },
+            {
+              "field": "sale_price",
+              "from": "29.99",
+              "to": "29.99 USD",
+              "reason": "Channel money formatting"
+            }
+          ],
+          "issues": [
+            {
+              "code": "IDENTIFIER_RECOMMENDED",
+              "severity": "warning",
+              "channel": "google",
+              "productIndex": 0,
+              "productId": "LAMP-1",
+              "field": "gtin",
+              "message": "No GTIN or MPN was provided",
+              "suggestion": "Provide a real identifier when one exists; use identifier_exists=no only when appropriate",
+              "documentation": "https://support.google.com/merchants/answer/7052112?hl=en"
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "code": "IDENTIFIER_RECOMMENDED",
+          "severity": "warning",
+          "channel": "google",
+          "productIndex": 0,
+          "productId": "LAMP-1",
+          "field": "gtin",
+          "message": "No GTIN or MPN was provided",
+          "suggestion": "Provide a real identifier when one exists; use identifier_exists=no only when appropriate",
+          "documentation": "https://support.google.com/merchants/answer/7052112?hl=en"
+        }
+      ],
+      "feed": "id\ttitle\tdescription\tlink\timage_link\tadditional_image_link\tavailability\tavailability_date\tcondition\tprice\tsale_price\tsale_price_effective_date\tbrand\tgtin\tmpn\tidentifier_exists\tgoogle_product_category\tproduct_type\titem_group_id\tcolor\tsize\tgender\tage_group\tmaterial\tpattern\tshipping\tshipping_weight\tcustom_label_0\tcustom_label_1\tcustom_label_2\tcustom_label_3\tcustom_label_4\r\nLAMP-1\tAdjustable Desk Lamp\tLED desk lamp\thttps://shop.example.com/lamp\thttps://shop.example.com/images/lamp.jpg\t\tin_stock\t\tnew\t39.99 USD\t29.99 USD\t\tNorthwind\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n"
+    }
+  ]
+}
