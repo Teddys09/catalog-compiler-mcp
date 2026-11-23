@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.teddys09/catalog-compiler",
+  "name": "io.github.Teddys09/catalog-compiler",
   "title": "Catalog Compiler",
   "description": "Validate Shopify and WooCommerce product data and generate Google, Meta and TikTok shopping feeds.",
   "repository": {
