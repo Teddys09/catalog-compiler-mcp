@@ -29,6 +29,6 @@ Use **Import from File** with [catalog-feeds.n8n.json](catalog-feeds.n8n.json), 
 
 ## Pricing and limits
 
-US $0.01 per API request. Up to 250 variants, 1,000,000 source bytes and three targets per compile. Limit 10 API requests per minute. A rejected request can count. Reading or downloading these static examples makes no paid API call. The caller manages file hosting and any schedule. [Current pricing and bandwidth](https://rapidapi.com/TeddyStrumilo/api/catalog-compiler/pricing).
+US $0.01 per API request. Up to 250 variants, 1,000,000 source bytes and three targets per compile. Limit 10 API requests per minute. A rejected request can count. Reading or downloading these static examples makes no paid API call. The caller manages file hosting and any schedule. [Current pricing and bandwidth](https://feeds.newbsscraping.com/go/github-pricing).
 
 These outputs demonstrate feed generation with fictional catalog data. Live merchant acceptance depends on the store and channel. [Support](https://feeds.newbsscraping.com/support).

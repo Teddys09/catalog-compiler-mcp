@@ -2,11 +2,17 @@
 
 Give a local MCP-compatible AI agent the ability to generate and validate Google Merchant Center, Meta and TikTok product feeds from Shopify, WooCommerce or custom catalog exports. The server uses standard MCP over stdio. It runs on your machine and uses your own RapidAPI application key for live calls.
 
-[Installation guide and example prompts](https://feeds.newbsscraping.com/guides/mcp-product-feeds/) · [Download the MCPB extension](https://github.com/Teddys09/catalog-compiler-mcp/releases/download/v1.0.0/catalog-compiler.mcpb) · [RapidAPI pricing](https://rapidapi.com/TeddyStrumilo/api/catalog-compiler/pricing)
+[Installation guide and example prompts](https://feeds.newbsscraping.com/guides/mcp-product-feeds/) · [Download the MCPB extension](https://github.com/Teddys09/catalog-compiler-mcp/releases/download/v1.0.0/catalog-compiler.mcpb) · [RapidAPI pricing](https://feeds.newbsscraping.com/go/github-pricing)
+
+## Try the free sample
+
+Open the desktop extension and leave the key blank. Paste this into your agent.
+
+> Use only catalog_example. Show me the sample product SKU, supported batch size and price per request. Stay offline.
 
 ## Connect a hosted client
 
-RapidAPI also exposes the REST endpoints as hosted MCP tools. Open **MCP configuration** in the signed-in [RapidAPI playground](https://rapidapi.com/TeddyStrumilo/api/catalog-compiler/playground/%2Fv1%2Fcatalog%2Fcompile). For a streamable HTTP client that supports custom headers, use `https://mcp.rapidapi.com`, set `x-api-host` to `catalog-compiler.p.rapidapi.com` and provide your RapidAPI key in the secret `x-api-key` header. The hosted `v1catalogcompile` tool takes the example request and returns all requested feeds. The local tool table below applies to the desktop extension and stdio package.
+RapidAPI also exposes the REST endpoints as hosted MCP tools. Open **MCP configuration** in the signed-in [RapidAPI playground](https://feeds.newbsscraping.com/go/github). For a streamable HTTP client that supports custom headers, use `https://mcp.rapidapi.com`, set `x-api-host` to `catalog-compiler.p.rapidapi.com` and provide your RapidAPI key in the secret `x-api-key` header. The hosted `v1catalogcompile` tool takes the example request and returns all requested feeds. The local tool table below applies to the desktop extension and stdio package.
 
 ## Connect a local client
 
